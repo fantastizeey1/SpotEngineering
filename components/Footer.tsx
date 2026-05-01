@@ -168,7 +168,7 @@ export function Footer() {
                   +234 (0) 806 077 3172
                 </span>
               </div>
-              <div className="flex gap-2.5 text-[0.85rem] text-[#8899AA] leading-normal">
+              <div className="flex gap-2.5 text-[0.85rem] text-slate-600 dark:text-[#8899AA] leading-normal w-full min-w-0">
                 <svg
                   className="shrink-0 mt-0.5 text-[#00AEEF]"
                   width="14"
@@ -181,7 +181,10 @@ export function Footer() {
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                   <polyline points="22,6 12,13 2,6" />
                 </svg>
-                info.spotengineeringservices@gmail.com
+
+                <span className="break-all w-full">
+                  info.spotengineeringservices@gmail.com
+                </span>
               </div>
             </div>
           </div>

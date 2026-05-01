@@ -15,6 +15,15 @@ export const BRAND = {
   border2: "rgba(255, 255, 255, 0.10)",
 } as const;
 
+export interface ServiceItem {
+  id: string;
+  number: string;
+  title: string;
+  description: string;
+  tags: string[];
+  icon: React.ReactNode;
+}
+
 // ── Shared Types ───────────────────────────────────────────
 export interface ServiceItem {
   id: string;

@@ -7,20 +7,17 @@ const STATS = [
 
 export function StatsStrip() {
   return (
-    <div className="bg-[#0D1117] border-t border-b border-white/5 px-6 lg:px-8 py-10">
-      <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-0">
-        {STATS.map((stat, i) => (
+    <div className="bg-white dark:bg-[#0D1117] border-y border-slate-200 dark:border-white/5 px-6 lg:px-8 py-10 lg:py-12 relative z-20">
+      <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-y-10 md:gap-y-0 divide-x-0 md:divide-x divide-slate-200 dark:divide-white/10">
+        {STATS.map((stat) => (
           <div
             key={stat.value}
-            className={[
-              "text-center py-6 px-4 relative",
-              i > 0 ? "before:absolute before:left-0 before:top-[20%] before:bottom-[20%] before:w-px before:bg-white/10" : "",
-            ].join(" ")}
+            className="text-center px-4 flex flex-col items-center justify-center"
           >
-            <span className="block font-[Bebas_Neue] text-[clamp(2.8rem,4vw,4rem)] text-[#00AEEF] leading-none">
+            <span className="block font-[Bebas_Neue] text-4xl lg:text-5xl text-[#00AEEF] leading-none mb-2">
               {stat.value}
             </span>
-            <div className="font-[Barlow] text-[0.8rem] font-medium tracking-[0.08em] uppercase text-[#8899AA] mt-2">
+            <div className="font-[Barlow] text-xs lg:text-sm font-bold tracking-[0.08em] uppercase text-slate-500 dark:text-[#8899AA]">
               {stat.label}
             </div>
           </div>
