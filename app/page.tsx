@@ -4,7 +4,7 @@ import { StatsStrip } from "@/components/StatsStrip";
 import { ServicesSection } from "@/components/ServicesSection";
 import { WhyUsSection } from "@/components/WhyUsSection";
 import { ClientsSection } from "@/components/ClientsSection";
-import { FieldDeskSection } from "@/components/FieldDeskSection";
+import { FaciliticsSection } from "@/components/FieldDeskSection";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 
@@ -18,7 +18,7 @@ export default function LandingPage() {
       <ServicesSection />
       <WhyUsSection />
       <ClientsSection />
-      <FieldDeskSection />
+      <FaciliticsSection />
       <CTASection />
       <Footer />
     </main>
