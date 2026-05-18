@@ -22,7 +22,7 @@ export function CTASection() {
 
           <div className="relative z-10 flex flex-col gap-4 w-full lg:w-auto">
             <a
-              href="mailto:info.spotengineeringservices@gmail.com"
+              href="mailto:info@spotengineering.com.ng"
               className="w-full lg:min-w-[240px] font-[Barlow] text-[0.95rem] font-bold tracking-[0.06em] uppercase text-white px-8 py-4 bg-[#00AEEF] rounded-xl hover:bg-[#0088CC] transition-all active:scale-95 text-center shadow-lg shadow-[#00AEEF]/20"
             >
               Send Us a Message

@@ -73,7 +73,7 @@ export function FaciliticsSection() {
             </p>
 
             <Link
-              href="https://facilitics.com"
+              href="https://facilitics.com.ng"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-full sm:w-auto gap-2 font-[Barlow] text-[0.95rem] font-bold tracking-wider uppercase text-white bg-[#A78BFA] px-8 py-4 rounded-xl hover:bg-[#8B5CF6] active:scale-95 transition-all shadow-lg shadow-[#A78BFA]/20 group mt-4"

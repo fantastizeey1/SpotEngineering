@@ -157,27 +157,27 @@ const SERVICES: ServiceItem[] = [
 
 function ServiceCard({ service }: { service: ServiceItem }) {
   return (
-    <div className="group relative bg-[#0D1117] p-8 transition-all duration-300 hover:bg-[#131923] overflow-hidden">
+    <article className="group relative bg-[#0D1117] p-6 lg:p-8 transition-all duration-300 hover:bg-[#131923] overflow-hidden">
       {/* Left accent bar */}
-      <div className="absolute left-0 top-0 bottom-0 w-0.75 bg-transparent group-hover:bg-[#00AEEF] transition-colors duration-300" />
+      <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-transparent group-hover:bg-[#00AEEF] transition-colors duration-300" />
 
       {/* Number */}
-      <div className="font-[Bebas_Neue] text-[3rem] leading-none text-white/10 group-hover:text-[rgba(0,174,239,0.18)] transition-colors duration-300 mb-5">
+      <div className="font-[Bebas_Neue] text-[2.5rem] lg:text-[3rem] leading-none text-white/10 group-hover:text-[rgba(0,174,239,0.18)] transition-colors duration-300 mb-4">
         {service.number}
       </div>
 
       {/* Icon */}
-      <div className="w-12 h-12 rounded-lg bg-[rgba(0,174,239,0.1)] border border-[rgba(0,174,239,0.28)] flex items-center justify-center mb-5 group-hover:bg-[#00AEEF] group-hover:border-[#00AEEF] transition-all duration-300">
+      <div className="w-11 h-11 lg:w-12 lg:h-12 rounded-lg bg-[rgba(0,174,239,0.1)] border border-[rgba(0,174,239,0.28)] flex items-center justify-center mb-4 group-hover:bg-[#00AEEF] group-hover:border-[#00AEEF] transition-all duration-300">
         <span className="group-hover:[&_svg]:stroke-white transition-all">
           {service.icon}
         </span>
       </div>
 
       {/* Text */}
-      <h3 className="font-[Barlow] text-[1.05rem] font-bold tracking-[-0.01em] text-[#F0F4F8] mb-3">
+      <h3 className="font-[Barlow] text-[1rem] lg:text-[1.05rem] font-bold tracking-[-0.01em] text-[#F0F4F8] mb-2.5">
         {service.title}
       </h3>
-      <p className="text-[0.875rem] text-[#8899AA] leading-[1.65]">
+      <p className="text-[0.85rem] text-[#8899AA] leading-[1.65]">
         {service.description}
       </p>
 
@@ -186,52 +186,49 @@ function ServiceCard({ service }: { service: ServiceItem }) {
         {service.tags.map((tag) => (
           <span
             key={tag}
-            className="text-[0.72rem] font-semibold tracking-[0.06em] uppercase px-2.5 py-1 border border-white/10 rounded-sm text-[#485566] group-hover:border-[rgba(0,174,239,0.28)] group-hover:text-[#8899AA] transition-all duration-300"
+            className="text-[0.68rem] font-semibold tracking-[0.06em] uppercase px-2 py-1 border border-white/10 rounded-sm text-[#485566] group-hover:border-[rgba(0,174,239,0.28)] group-hover:text-[#8899AA] transition-all duration-300"
           >
             {tag}
           </span>
         ))}
       </div>
-    </div>
+    </article>
   );
 }
 
 function FTTHCard({ service }: { service: ServiceItem }) {
   return (
-    <div
-      className="group relative col-span-full bg-linear-to-r from-[#131923] to-[#0D1117] p-8 transition-all duration-300 hover:from-[#1A2233] hover:to-[#131923] overflow-hidden border-t border-[rgba(0,174,239,0.18)]"
-      style={{ gridColumn: "1 / -1" }}
-    >
-      <div className="absolute left-0 top-0 bottom-0 w-0.75 bg-[#00AEEF]" />
+    <article className="group relative col-span-full bg-gradient-to-r from-[#131923] to-[#0D1117] p-6 lg:p-8 transition-all duration-300 hover:from-[#1A2233] hover:to-[#131923] overflow-hidden border-t border-[rgba(0,174,239,0.18)]">
+      <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#00AEEF]" />
 
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 items-start lg:items-center">
         {/* Number + icon */}
         <div className="flex items-center gap-4 shrink-0">
-          <div className="font-[Bebas_Neue] text-[3rem] leading-none text-[rgba(0,174,239,0.18)]">
+          <div className="font-[Bebas_Neue] text-[2.5rem] lg:text-[3rem] leading-none text-[rgba(0,174,239,0.18)]">
             {service.number}
           </div>
-          <div className="w-12 h-12 rounded-lg bg-[rgba(0,174,239,0.1)] border border-[rgba(0,174,239,0.28)] flex items-center justify-center group-hover:bg-[#00AEEF] group-hover:border-[#00AEEF] transition-all duration-300">
+          <div className="w-11 h-11 lg:w-12 lg:h-12 rounded-lg bg-[rgba(0,174,239,0.1)] border border-[rgba(0,174,239,0.28)] flex items-center justify-center group-hover:bg-[#00AEEF] group-hover:border-[#00AEEF] transition-all duration-300">
             {service.icon}
           </div>
         </div>
 
         {/* Text block */}
-        <div className="flex-1">
-          <div className="inline-flex items-center gap-1.5 text-[#00AEEF] font-[Barlow] text-[0.7rem] font-bold tracking-[0.14em] uppercase border border-[rgba(0,174,239,0.28)] bg-[rgba(0,174,239,0.1)] px-3 py-1 rounded-full mb-2">
-            <span className="w-1 h-1 rounded-full bg-[#00AEEF] inline-block" />
+        <div className="flex-1 min-w-0">
+          <div className="inline-flex items-center gap-1.5 text-[#00AEEF] font-[Barlow] text-[0.68rem] font-bold tracking-[0.14em] uppercase border border-[rgba(0,174,239,0.28)] bg-[rgba(0,174,239,0.1)] px-3 py-1 rounded-full mb-2">
+            <span className="w-1 h-1 rounded-full bg-[#00AEEF] inline-block animate-pulse" />
             New Service
           </div>
-          <h3 className="font-[Barlow] text-[1.15rem] font-bold tracking-[-0.01em] text-[#F0F4F8] mb-2">
+          <h3 className="font-[Barlow] text-[1.05rem] lg:text-[1.15rem] font-bold tracking-[-0.01em] text-[#F0F4F8] mb-2">
             {service.title}
           </h3>
-          <p className="text-[0.875rem] text-[#8899AA] leading-[1.65] max-w-2xl">
+          <p className="text-[0.85rem] text-[#8899AA] leading-[1.65] max-w-2xl">
             {service.description}
           </p>
           <div className="flex flex-wrap gap-1.5 mt-4">
             {service.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-[0.72rem] font-semibold tracking-[0.06em] uppercase px-2.5 py-1 border border-[rgba(0,174,239,0.28)] rounded-sm text-[#8899AA]"
+                className="text-[0.68rem] font-semibold tracking-[0.06em] uppercase px-2 py-1 border border-[rgba(0,174,239,0.28)] rounded-sm text-[#8899AA]"
               >
                 {tag}
               </span>
@@ -241,54 +238,56 @@ function FTTHCard({ service }: { service: ServiceItem }) {
 
         {/* Stat pills */}
         <div className="flex gap-3 shrink-0">
-          <div className="bg-[#0D1117] border border-white/10 rounded-xl px-5 py-4 text-center min-w-22.5">
-            <div className="font-[Bebas_Neue] text-[1.8rem] text-[#00AEEF] leading-none">
+          <div className="bg-[#0D1117] border border-white/10 rounded-xl px-4 lg:px-5 py-4 text-center min-w-[88px]">
+            <div className="font-[Bebas_Neue] text-[1.6rem] lg:text-[1.8rem] text-[#00AEEF] leading-none">
               1 Gbps
             </div>
-            <div className="text-[0.7rem] text-[#8899AA] mt-1">Max Speed</div>
+            <div className="text-[0.65rem] text-[#8899AA] mt-1">Max Speed</div>
           </div>
-          <div className="bg-[#0D1117] border border-white/10 rounded-xl px-5 py-4 text-center min-w-22.5">
-            <div className="font-[Bebas_Neue] text-[1.8rem] text-[#00C878] leading-none">
+          <div className="bg-[#0D1117] border border-white/10 rounded-xl px-4 lg:px-5 py-4 text-center min-w-[88px]">
+            <div className="font-[Bebas_Neue] text-[1.6rem] lg:text-[1.8rem] text-[#00C878] leading-none">
               99.9%
             </div>
-            <div className="text-[0.7rem] text-[#8899AA] mt-1">Uptime</div>
+            <div className="text-[0.65rem] text-[#8899AA] mt-1">Uptime</div>
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 
 export function ServicesSection() {
+  const mainServices = SERVICES.filter((s) => s.id !== "ftth");
+  const ftthService = SERVICES.find((s) => s.id === "ftth")!;
+
   return (
-    <section id="services" className="bg-[#0D1117] px-6 lg:px-8 py-24">
-      <div className="max-w-300 mx-auto">
+    <section
+      id="services"
+      className="bg-[#0D1117] px-5 sm:px-6 lg:px-8 py-20 lg:py-28"
+    >
+      <div className="max-w-[1200px] mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-14">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-5 mb-12 lg:mb-16">
           <div>
-            <div className="font-[Barlow] text-[0.78rem] font-bold tracking-[0.16em] uppercase text-[#00AEEF] mb-3">
+            <div className="font-[Barlow] text-[0.75rem] font-bold tracking-[0.16em] uppercase text-[#00AEEF] mb-3">
               What We Do
             </div>
-            <h2 className="font-[Bebas_Neue] text-[clamp(2.4rem,4vw,3.6rem)] leading-none tracking-[0.02em] text-[#F0F4F8]">
+            <h2 className="font-[Bebas_Neue] text-[clamp(2.2rem,4vw,3.4rem)] leading-none tracking-[0.02em] text-[#F0F4F8]">
               Our Service Lines
             </h2>
           </div>
-          <p className="text-[1rem] text-[#8899AA] max-w-105 leading-[1.7] md:text-right">
+          <p className="text-[0.97rem] text-[#8899AA] max-w-[420px] leading-[1.7] md:text-right">
             From power systems to telecom infrastructure — we deliver end-to-end
             engineering solutions that keep Nigeria moving.
           </p>
         </div>
 
-        {/* Grid */}
-        <div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-xl overflow-hidden border border-white/5"
-          style={{ background: "rgba(255,255,255,0.055)", gap: "1px" }}
-        >
-          {SERVICES.filter((s) => s.id !== "ftth").map((service) => (
+        {/* Grid — uses border + 1px gap trick for clean dividers */}
+        <div className="rounded-xl overflow-hidden border border-white/5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-y divide-x-0 md:divide-x-0 [&>*]:border-b [&>*]:border-r [&>*]:border-white/5">
+          {mainServices.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}
-          {/* FTTH — full-width featured card */}
-          <FTTHCard service={SERVICES.find((s) => s.id === "ftth")!} />
+          <FTTHCard service={ftthService} />
         </div>
       </div>
     </section>

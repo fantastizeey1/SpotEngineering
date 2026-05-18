@@ -183,7 +183,7 @@ export function Footer() {
                 </svg>
 
                 <span className="break-all w-full">
-                  info.spotengineeringservices@gmail.com
+                  info@spotengineering.com.ng
                 </span>
               </div>
             </div>
