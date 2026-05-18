@@ -1,26 +1,36 @@
 import Link from "next/link";
 
-const FIELDDESK_FEATURES = [
+const FACILITICS_FEATURES = [
   {
-    label: "Generator monitoring, dual-PM scheduling & fuel burn rates",
+    label: "Dynamic Custom Asset System with live Schema Builder",
     status: "live",
   },
-  { label: "Multi-fuel CFO ledger (Diesel, PMS, AGO, DPK)", status: "live" },
   {
-    label: "Closed-loop issue board with evidence photo uploads",
+    label: "Enterprise Fleet Management & transactionally safe lifecycles",
     status: "live",
   },
-  { label: "Smart PDF report engine — exceptions-only output", status: "live" },
+  {
+    label: "Multi-fuel CFO ledger (Diesel, PMS, AGO, DPK)",
+    status: "live",
+  },
+  {
+    label: "Closed-loop issue board with real-time commenting & evidence",
+    status: "live",
+  },
+  {
+    label: "Smart PDF report engine — exceptions-only output",
+    status: "live",
+  },
   {
     label: "QR-code fault reporting — no login needed for technicians",
     status: "live",
   },
 ] as const;
 
-export function FieldDeskSection() {
+export function FaciliticsSection() {
   return (
     <section
-      id="fielddesk"
+      id="facilitics"
       className="bg-white dark:bg-[#07080C] px-6 lg:px-8 py-20 lg:py-28"
     >
       <div className="max-w-[1200px] mx-auto">
@@ -33,7 +43,7 @@ export function FieldDeskSection() {
           </h2>
           <p className="text-base text-slate-600 dark:text-[#8899AA] max-w-xl mx-auto leading-relaxed">
             Beyond physical engineering, our team ships world-class software.
-            Meet FieldDesk.
+            Meet Facilitics.
           </p>
         </div>
 
@@ -49,7 +59,7 @@ export function FieldDeskSection() {
             </div>
 
             <h3 className="font-[Bebas_Neue] text-5xl lg:text-6xl leading-none tracking-wide text-slate-900 dark:text-[#F0F4F8] mb-3">
-              <span className="text-[#A78BFA]">Field</span>Desk
+              <span className="text-[#A78BFA]">Facili</span>tics
             </h3>
             <div className="font-[Barlow] text-sm font-bold tracking-[0.08em] uppercase text-slate-500 dark:text-[#8899AA] mb-6">
               Facility & Compliance Management Platform
@@ -57,18 +67,18 @@ export function FieldDeskSection() {
 
             <p className="text-base text-slate-600 dark:text-[#8899AA] leading-relaxed mb-6">
               A multi-tenant, role-based SaaS built for Nigerian aviation,
-              engineering, and real estate companies. FieldDesk unifies
-              generator monitoring, fuel ledgers, safety compliance, AC
-              diagnostics, and ticketing into a single command center.
+              engineering, and real estate companies. Facilitics unifies custom
+              asset tracking, fleet automation, fuel ledgers, safety compliance,
+              and ticketing into a single command center.
             </p>
 
             <Link
-              href="https://fielddesk.ng"
+              href="https://facilitics.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-full sm:w-auto gap-2 font-[Barlow] text-[0.95rem] font-bold tracking-wider uppercase text-white bg-[#A78BFA] px-8 py-4 rounded-xl hover:bg-[#8B5CF6] active:scale-95 transition-all shadow-lg shadow-[#A78BFA]/20 group mt-4"
             >
-              Visit FieldDesk
+              Visit Facilitics
               <svg
                 width="16"
                 height="16"
@@ -106,7 +116,7 @@ export function FieldDeskSection() {
 
             <div className="bg-white dark:bg-[#07080C] border border-slate-200 dark:border-white/10 rounded-2xl p-6 shadow-sm dark:shadow-none">
               <div className="flex flex-col divide-y divide-slate-100 dark:divide-white/5">
-                {FIELDDESK_FEATURES.map((f) => (
+                {FACILITICS_FEATURES.map((f) => (
                   <div
                     key={f.label}
                     className="flex items-start sm:items-center gap-3 py-3 first:pt-0 last:pb-0"
