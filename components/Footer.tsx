@@ -6,11 +6,18 @@ const FOOTER_SERVICES = [
   "Generators & Transformers",
   "Mechanical Engineering",
   "Telecom & Network",
+  "FTTH Solutions",
   "Project Management",
   "Consultancy",
 ];
 
-const FOOTER_COMPANY = ["About Us", "Why Choose Us", "Our Clients", "Contact"];
+const FOOTER_COMPANY = [
+  { label: "About Us", href: "#why-us" },
+  { label: "Why Choose Us", href: "#why-us" },
+  { label: "Our Clients", href: "#clients" },
+  { label: "Facilitics", href: "#facilitics" },
+  { label: "Contact", href: "#contact" },
+];
 
 const SOCIAL_LINKS = [
   {
@@ -48,10 +55,10 @@ const SOCIAL_LINKS = [
     ),
   },
   {
-    label: "Twitter/X",
+    label: "Twitter / X",
     href: "https://twitter.com/spotengineering",
     icon: (
-      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+      <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
       </svg>
     ),
@@ -60,13 +67,13 @@ const SOCIAL_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#0D1117] border-t border-white/5 px-6 lg:px-8 pt-16 pb-8">
-      <div className="max-w-300 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/5 mb-8">
+    <footer className="bg-[#0D1117] border-t border-white/5 px-5 sm:px-6 lg:px-8 pt-14 pb-8">
+      <div className="max-w-[1200px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/5 mb-8">
           {/* Brand column */}
-          <div>
+          <div className="sm:col-span-2 lg:col-span-1">
             <SpotLogo />
-            <p className="text-[0.875rem] text-[#8899AA] leading-[1.7] mt-4 mb-6 max-w-67.5">
+            <p className="text-[0.875rem] text-[#8899AA] leading-[1.7] mt-4 mb-5 max-w-[270px]">
               A multi-discipline engineering firm committed to delivering
               reliable, cost-effective solutions across electrical, mechanical,
               energy, and telecom sectors in Nigeria.
@@ -78,8 +85,8 @@ export function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className="w-8.5 h-8.5 rounded-lg border border-white/10 flex items-center justify-center text-[#8899AA] hover:border-[rgba(0,174,239,0.28)] hover:text-[#00AEEF] hover:bg-[rgba(0,174,239,0.08)] transition-all"
+                  aria-label={`Follow us on ${s.label}`}
+                  className="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-[#8899AA] hover:border-[rgba(0,174,239,0.28)] hover:text-[#00AEEF] hover:bg-[rgba(0,174,239,0.08)] transition-all"
                 >
                   {s.icon}
                 </a>
@@ -89,7 +96,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <div className="font-[Barlow] text-[0.8rem] font-bold tracking-widest uppercase text-[#F0F4F8] mb-5">
+            <div className="font-[Barlow] text-[0.78rem] font-bold tracking-widest uppercase text-[#F0F4F8] mb-5">
               Services
             </div>
             <ul className="flex flex-col gap-2.5">
@@ -97,7 +104,7 @@ export function Footer() {
                 <li key={s}>
                   <Link
                     href="#services"
-                    className="text-[0.86rem] text-[#8899AA] hover:text-[#00AEEF] transition-colors"
+                    className="text-[0.85rem] text-[#8899AA] hover:text-[#00AEEF] transition-colors"
                   >
                     {s}
                   </Link>
@@ -108,17 +115,17 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <div className="font-[Barlow] text-[0.8rem] font-bold tracking-widest uppercase text-[#F0F4F8] mb-5">
+            <div className="font-[Barlow] text-[0.78rem] font-bold tracking-widest uppercase text-[#F0F4F8] mb-5">
               Company
             </div>
             <ul className="flex flex-col gap-2.5">
               {FOOTER_COMPANY.map((c) => (
-                <li key={c}>
+                <li key={c.label}>
                   <Link
-                    href={`#${c.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="text-[0.86rem] text-[#8899AA] hover:text-[#00AEEF] transition-colors"
+                    href={c.href}
+                    className="text-[0.85rem] text-[#8899AA] hover:text-[#00AEEF] transition-colors"
                   >
-                    {c}
+                    {c.label}
                   </Link>
                 </li>
               ))}
@@ -127,11 +134,17 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <div className="font-[Barlow] text-[0.8rem] font-bold tracking-widest uppercase text-[#F0F4F8] mb-5">
+            <div className="font-[Barlow] text-[0.78rem] font-bold tracking-widest uppercase text-[#F0F4F8] mb-5">
               Contact
             </div>
             <div className="flex flex-col gap-4">
-              <div className="flex gap-2.5 text-[0.85rem] text-[#8899AA] leading-normal">
+              {/* Address */}
+              <a
+                href="https://maps.google.com/?q=8+Adeojo+Street+Wemabod+Estate+Ikeja+Lagos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex gap-2.5 text-[0.84rem] text-[#8899AA] leading-normal hover:text-[#00AEEF] transition-colors group"
+              >
                 <svg
                   className="shrink-0 mt-0.5 text-[#00AEEF]"
                   width="14"
@@ -144,9 +157,13 @@ export function Footer() {
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
-                8, Adeojo Street, Wemabod Estate, Ikeja, Lagos
-              </div>
-              <div className="flex gap-2.5 text-[0.85rem] text-[#8899AA] leading-normal">
+                8, Adeojo Street, Wemabod Estate,
+                <br />
+                Ikeja, Lagos
+              </a>
+
+              {/* Phones */}
+              <div className="flex gap-2.5 text-[0.84rem] text-[#8899AA] leading-normal">
                 <svg
                   className="shrink-0 mt-0.5 text-[#00AEEF]"
                   width="14"
@@ -158,17 +175,26 @@ export function Footer() {
                 >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.9 16.9z" />
                 </svg>
-                <span>
-                  +234 (0) 803 647 6553
-                  <br />
-                  +234 (0) 809 966 6850
-                  <br />
-                  +234 (0) 703 485 7727
-                  <br />
-                  +234 (0) 806 077 3172
+                <span className="flex flex-col gap-0.5">
+                  {[
+                    { display: "+234 (0) 803 647 6553", tel: "+2348036476553" },
+                    { display: "+234 (0) 809 966 6850", tel: "+2348099666850" },
+                    { display: "+234 (0) 703 485 7727", tel: "+2347034857727" },
+                    { display: "+234 (0) 806 077 3172", tel: "+2348060773172" },
+                  ].map((p) => (
+                    <a
+                      key={p.tel}
+                      href={`tel:${p.tel}`}
+                      className="hover:text-[#00AEEF] transition-colors"
+                    >
+                      {p.display}
+                    </a>
+                  ))}
                 </span>
               </div>
-              <div className="flex gap-2.5 text-[0.85rem] text-slate-600 dark:text-[#8899AA] leading-normal w-full min-w-0">
+
+              {/* Email */}
+              <div className="flex gap-2.5 text-[0.84rem] text-[#8899AA] leading-normal">
                 <svg
                   className="shrink-0 mt-0.5 text-[#00AEEF]"
                   width="14"
@@ -181,24 +207,32 @@ export function Footer() {
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                   <polyline points="22,6 12,13 2,6" />
                 </svg>
-
-                <span className="break-all w-full">
+                <a
+                  href="mailto:info@spotengineering.com.ng"
+                  className="break-all hover:text-[#00AEEF] transition-colors"
+                >
                   info@spotengineering.com.ng
-                </span>
+                </a>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-[0.8rem] text-[#485566]">
-          <div className="flex items-center gap-2 font-[Barlow] font-semibold">
-            © 2025 Spot Engineering Services Limited
-            <span className="px-1.5 py-0.5 border border-white/10 rounded text-[0.72rem] text-[#485566]">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 text-[0.78rem] text-[#485566]">
+          <div className="flex flex-wrap items-center gap-2 font-[Barlow] font-semibold">
+            <span>
+              © {new Date().getFullYear()} Spot Engineering Services Limited
+            </span>
+            <span className="px-1.5 py-0.5 border border-white/10 rounded text-[0.7rem] text-[#485566]">
               RC 1390963
             </span>
           </div>
-          <div>All rights reserved. Ikeja, Lagos, Nigeria.</div>
+          <div className="flex items-center gap-3">
+            <span>All rights reserved.</span>
+            <span className="w-1 h-1 rounded-full bg-[#485566]" />
+            <span>Ikeja, Lagos, Nigeria.</span>
+          </div>
         </div>
       </div>
     </footer>
